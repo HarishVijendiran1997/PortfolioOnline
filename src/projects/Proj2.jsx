@@ -11,7 +11,10 @@ const Proj2 = () => {
         <span className='text-2xl font-bold text-white tracking-wider'></span>
         <div className='pt-8 text-center'>
           <a href='https://github.com/HarishVijendiran1997/Portfolio' target='_blank'>
-            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>GitHub</button>
+            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Github</button>
+          </a>
+          <a href='https://portfolio-online-eight.vercel.app/' target='_blank'>
+            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Live</button>
           </a>
         </div>
       </div>
