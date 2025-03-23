@@ -17,10 +17,10 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formData = [
-            [name, email, message]
+            [name, email, message,new Date().toLocaleString()]
         ]
         try {
-            const response = await fetch(import.meta.env.VITE_GOOGLE_FORM_URL, {
+            const response = await fetch("https://v1.nocodeapi.com/harishvijendiran/google_sheets/NHEqIhmqLvOSmmMP?tabId=Sheet1", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,7 +29,6 @@ const Contact = () => {
             }
             )
             const result = await response.json();
-            console.log(result);
             SetOnSuccess(true)
             setTimeout(() => SetOnSuccess(false), 5000)
             setData({ ...data, name: "", email: "", message: "", })
