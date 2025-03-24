@@ -1,20 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import proj4 from '../assets/proj4.webp'
 
 //! Expense Tracker Js 
 
 const Proj4 = () => {
+    const [menu, setMenu] = useState(false)
+    const github = 'https://github.com/HarishVijendiran1997/js-expense-tracker'
+
+    const handleClick = () => {
+        setMenu(!menu)
+        console.log(menu)
+    }
     return (
-        <div className='transform transition-transform duration-300 hover:scale-105 overflow-hidden shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center h-[200px] bg-cover relative'>
-            <img src={proj4} alt="" />
-            <div className='opacity-0 group-hover:opacity-90 bg-[gray]/60 absolute inset-0 flex flex-col justify-center items-center'>
-                <span className='text-2xl font-bold text-white tracking-wider'></span>
-                <div className='pt-8 text-center'>
-                    <a href='https://github.com/HarishVijendiran1997/js-expense-tracker' target='_blank'>
-                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>GitHub</button>
+        <div onClick={handleClick} className='transform transition-transform duration-300 hover:scale-105 overflow-hidden shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center h-[200px] bg-cover relative'>
+            <img src={proj4} loading="lazy" alt="" />
+            {/* Menu for larger screens (shown on hover) */}
+            <div className="hidden md:flex opacity-0 group-hover:opacity-100 bg-[gray]/60 absolute inset-0 flex-col justify-center items-center transition-opacity duration-300">
+                <span className="text-2xl font-bold text-white tracking-wider"></span>
+                <div className="pt-8 text-center">
+                    <a href={github} target="_blank">
+                        <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">Github</button>
                     </a>
                 </div>
             </div>
+
+            {/* Menu for smaller screens (shown on click) */}
+            {menu && (<div className='opacity-100 bg-[gray]/60 absolute inset-0 flex flex-col justify-center items-center'>
+                <span className='text-2xl font-bold text-white tracking-wider'></span>
+                <div className='pt-8 text-center'>
+                    <a href={github} target='_blank'>
+                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Github</button>
+                    </a>
+                </div>
+            </div>)}
         </div>
     )
 }
