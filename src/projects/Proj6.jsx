@@ -1,5 +1,5 @@
 import React from 'react'
-import proj6 from '../assets/proj6.png'
+import proj6 from '../assets/proj6.webp'
 
 //! To-do List Js 
 

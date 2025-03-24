@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import proj2 from '../assets/proj2.png'
+import proj2 from '../assets/proj2.webp'
 
 //! Portfolio 
 
@@ -15,7 +15,7 @@ const Proj2 = () => {
   return (
     <div onClick={handleClick} className='transform transition-transform duration-300 hover:scale-105 overflow-hidden shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center h-[200px] bg-cover relative'>
 
-      
+
       <img src={proj2} alt="" />
 
       {/* Menu for larger screens (shown on hover) */}

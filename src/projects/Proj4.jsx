@@ -1,5 +1,5 @@
 import React from 'react'
-import proj4 from '../assets/proj4.png'
+import proj4 from '../assets/proj4.webp'
 
 //! Expense Tracker Js 
 

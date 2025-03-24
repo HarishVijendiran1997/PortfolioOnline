@@ -1,5 +1,5 @@
 import React from 'react'
-import proj3 from '../assets/proj3.png'
+import proj3 from '../assets/proj3.webp'
 
 //! Weather App Js 
 

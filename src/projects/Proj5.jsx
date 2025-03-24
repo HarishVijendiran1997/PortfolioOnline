@@ -1,5 +1,5 @@
 import React from 'react'
-import proj5 from '../assets/proj5.png'
+import proj5 from '../assets/proj5.webp'
 
 //! E-Commerce Js 
 

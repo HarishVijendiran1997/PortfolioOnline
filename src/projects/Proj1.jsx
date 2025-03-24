@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import proj1 from '../assets/proj1.png'
+import proj1 from '../assets/proj1.webp'
 
 //! WorkoutX 
 
