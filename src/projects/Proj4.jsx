@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import proj4 from '../assets/proj4.webp'
 
 //! Expense Tracker Js 

@@ -1,10 +1,15 @@
-import About from "./components/About"
-import Hero from "./components/Hero"
 import NavBar from "./components/NavBar"
-import Skills from "./components/Skills"
-import Project from "./components/Project"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
+import Hero from "./components/Hero"
+
+
+import { lazy, Suspense } from "react"
+
+// Lazy loading components
+const Skills = lazy(() => import("./components/Skills"));
+const About = lazy(() => import("./components/About"));
+const Project = lazy(() => import("./components/Project"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
 
@@ -12,11 +17,13 @@ function App() {
     <>
       <NavBar />
       <Hero />
+      <Suspense fallback={<div>Loading...</div>}>
       <Skills />
-      <About/>
-      <Project/>
-      <Contact/>
-      <Footer/>
+        <Project />
+        <About />
+        <Contact />
+        <Footer />
+      </Suspense>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import proj2 from '../assets/proj2.webp'
 
 //! Portfolio 

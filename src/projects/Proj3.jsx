@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import proj3 from '../assets/proj3.webp'
 
 //! Weather App Js 

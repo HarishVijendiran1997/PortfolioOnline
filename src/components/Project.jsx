@@ -1,12 +1,12 @@
-import React from 'react'
-import Proj1 from '../projects/Proj1'
-import Proj2 from '../projects/Proj2'
-import Proj3 from '../projects/Proj3'
-import Proj4 from '../projects/Proj4'
-import Proj5 from '../projects/Proj5'
-import Proj6 from '../projects/Proj6'
+import { lazy, Suspense } from "react";
+const Proj1 = lazy(() => import("../projects/Proj1"));
+const Proj2 = lazy(() => import("../projects/Proj2"));
+const Proj3 = lazy(() => import("../projects/Proj3"));
+const Proj4 = lazy(() => import("../projects/Proj4"));
+const Proj5 = lazy(() => import("../projects/Proj5"));
+const Proj6 = lazy(() => import("../projects/Proj6"));
 
-const project = () => {
+const Project = () => {
   return (
     <div className='scroll-smooth max-w-[1200px] mx-auto p-5' id='project'>
 
@@ -20,18 +20,20 @@ const project = () => {
       <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
 
         {/* Projects */}
+        <Suspense fallback={<div className="text-white">Loading...</div>}>
         <Proj1 />
         <Proj2 />
         <Proj3/>
         <Proj4/>
         <Proj5/>
         <Proj6/>
-        
         {/* Add more projects here */}
+        </Suspense>
+        
 
       </div>
     </div>
   )
 }
 
-export default project
+export default Project

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import proj6 from '../assets/proj6.webp'
 
 //! To-do List Js 

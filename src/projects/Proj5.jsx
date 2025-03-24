@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import proj5 from '../assets/proj5.webp'
 
 //! E-Commerce Js 
