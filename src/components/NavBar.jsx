@@ -11,7 +11,7 @@ const NavBar = () => {
     return (
         <div className="border border-gray-800 md:rounded-b-4xl bg-black text-gray-400 max-w-[1200px] mx-auto h-24 flex justify-between items-center sm:px-20 px-6" id="home">
             {/* Logo */}
-            <h1 className="text-3xl font-bold bg-gradient-to-r text-transparent bg-clip-text from-blue-500  to-pink-500">Harish Vijendiran</h1>
+            <h1 aria-label="Harish Vijendiran" className="text-3xl font-bold bg-gradient-to-r text-transparent bg-clip-text from-blue-500  to-pink-500">Harish Vijendiran</h1>
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex space-x-8">

@@ -10,22 +10,22 @@ const Footer = () => {
             </div>
             <div className="flex gap-4 sm:mt-0">
                 {/* LinkedIn */}
-                <a href="https://www.linkedin.com/in/harish-v-4a674b223/" target="_blank" rel="noopener noreferrer">
+                <a aria-label='LinkedIn' href="https://www.linkedin.com/in/harish-v-4a674b223/" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin className="text-gray-600 hover:text-blue-500 text-2xl transition-all duration-300 hover:scale-120" />
                 </a>
 
                 {/* GitHub */}
-                <a href="https://github.com/HarishVijendiran1997" target="_blank" rel="noopener noreferrer">
+                <a aria-label='Github' href="https://github.com/HarishVijendiran1997" target="_blank" rel="noopener noreferrer">
                     <FaGithub className="text-gray-600 hover:text-gray-200 text-2xl transition-all duration-300 hover:scale-120" />
                 </a>
 
                 {/* Instagram */}
-                <a href="https://www.instagram.com/harishvijendiran/" target="_blank" rel="noopener noreferrer">
+                <a aria-label='Instagram' href="https://www.instagram.com/harishvijendiran/" target="_blank" rel="noopener noreferrer">
                     <FaInstagram className="text-gray-600 hover:text-pink-500 text-2xl transition-all duration-300 hover:scale-120" />
                 </a>
 
                 {/* Email */}
-                <a href="mailto:harish.vijendiran@gmail.com" target="_blank" rel="noopener noreferrer">
+                <a aria-label='Email' href="mailto:harish.vijendiran@gmail.com" target="_blank" rel="noopener noreferrer">
                     <FaEnvelope className="text-gray-600 hover:text-orange-500 text-2xl transition-all duration-300 hover:scale-120" />
                 </a>
 

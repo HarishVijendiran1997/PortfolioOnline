@@ -55,27 +55,27 @@ const Contact = () => {
                                 {/* Name */}
                                 <div>
                                     <div className='mt-2.5'>
-                                        <input type='text' name='name' id='' value={name} onChange={handleChange} required placeholder='Your Name' className='bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-blue-600 rounded-md focus:outline-none focus:border-pink-600' />
+                                        <input aria-label='Enter Name here' type='text' name='name' id='' value={name} onChange={handleChange} required placeholder='Your Name' className='bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-blue-600 rounded-md focus:outline-none focus:border-pink-600' />
                                     </div>
                                 </div>
 
                                 {/* Email */}
                                 <div>
                                     <div className='mt-2.5'>
-                                        <input type='email' name='email' id='' value={email} onChange={handleChange} required placeholder='Your Email' className='bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-blue-600 rounded-md focus:outline-none focus:border-pink-600' />
+                                        <input aria-label='Enter Email here' type='email' name='email' id='' value={email} onChange={handleChange} required placeholder='Your Email' className='bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-blue-600 rounded-md focus:outline-none focus:border-pink-600' />
                                     </div>
                                 </div>
 
                                 {/* Message */}
                                 <div className='sm:col-span-2'>
                                     <div className='mt-2.5'>
-                                        <textarea name='message' id='' value={message} onChange={handleChange} placeholder='Your Message' className='bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-blue-600 rounded-md focus:outline-none focus:border-pink-600' />
+                                        <textarea aria-label='Enter Message here' name='message' id='' value={message} onChange={handleChange} placeholder='Your Message' className='bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-blue-600 rounded-md focus:outline-none focus:border-pink-600' />
                                     </div>
                                 </div>
 
                                 {/* Submit Button */}
                                 <div className='sm:col-span-2'>
-                                    <button type='submit' className="text-xl w-full p-4 mt-2 text-white bg-gradient-to-r from-blue-500 to-pink-500 rounded-md cursor-pointer hover:from-blue-600 hover:to-pink-600">Send</button>
+                                    <button aria-label='send button' type='submit' className="text-xl w-full p-4 mt-2 text-white bg-gradient-to-r from-blue-500 to-pink-500 rounded-md cursor-pointer hover:from-blue-600 hover:to-pink-600">Send</button>
                                 </div>
 
                             </div>

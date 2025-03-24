@@ -16,7 +16,7 @@ const About = () => {
                 </div>
 
                 {/* About Image */}
-                <img className='mx-auto rounded-3xl py-8 md:py-0' src={aboutImg} width={300} height={300} />
+                <img role='img' aria-label='Inspiration to explore' alt='Inspiration to explore' className='mx-auto rounded-3xl py-8 md:py-0' src={aboutImg} width={300} height={300} />
             </div>
         </div>
     )

@@ -7,14 +7,14 @@ const Hero = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-0 max-w-[1200px] md:h-[70vh] mx-auto py-8 bg-black'>
 
             {/*Hero Image */}
-            <div className='col-span-1 sm:px-5 md:px-0 my-auto mx-auto w-[300px] h-auto md:w-[250px] lg:w-[300px]'>
-                <img src={heroImage} alt='hero-image' className='object-cover w-full h-full rounded-[60px] shadow-[4px_-4px_10px_rgb(236,72,153),-4px_4px_10px_rgb(96,165,250)] hover:shadow-[4px_-4px_10px_rgb(96,165,250),-4px_4px_10px_rgb(236,72,153)] transition-all duration-1000' />
+            <div role='img' className='col-span-1 sm:px-5 md:px-0 my-auto mx-auto w-[300px] h-auto md:w-[250px] lg:w-[300px]'>
+                <img aria-label='portrait of Harish Vijendiran' src={heroImage} alt='portrait of Harish Vijendiran' className='object-cover w-full h-full rounded-[60px] shadow-[4px_-4px_10px_rgb(236,72,153),-4px_4px_10px_rgb(96,165,250)] hover:shadow-[4px_-4px_10px_rgb(96,165,250),-4px_4px_10px_rgb(236,72,153)] transition-all duration-1000' />
             </div>
 
             <div className='col-span-2 px-5'>
 
                 {/*Hero Text */}
-                <h1 className='md:mt-15 text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold'>
+                <h1 aria-label='I`m a front-end developer' className='md:mt-15 text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold'>
                     <span className='bg-gradient-to-r text-transparent bg-clip-text from-blue-500  to-pink-500'>
                         I'm a
                     </span><br />
