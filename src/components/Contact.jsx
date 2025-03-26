@@ -8,6 +8,7 @@ const Contact = () => {
         message: ''
     })
     const [onSuccess, SetOnSuccess] = useState(false)
+    const [loading, setLoading] = useState(false)
     const { name, email, message } = data
 
     const handleChange = (e) => {
@@ -15,9 +16,10 @@ const Contact = () => {
     }
 
     const handleSubmit = async (e) => {
+        setLoading(true)
         e.preventDefault()
         const formData = [
-            [name, email, message,new Date().toLocaleString()]
+            [name, email, message, new Date().toLocaleString()]
         ]
         try {
             const response = await fetch("https://v1.nocodeapi.com/harishvijendiran/google_sheets/NHEqIhmqLvOSmmMP?tabId=Sheet1", {
@@ -31,9 +33,12 @@ const Contact = () => {
             const result = await response.json();
             SetOnSuccess(true)
             setTimeout(() => SetOnSuccess(false), 5000)
+            setLoading(false)
             setData({ ...data, name: "", email: "", message: "", })
         } catch (error) {
             console.error(error)
+        } finally {
+            setLoading(false)
         }
     }
     return (
@@ -75,7 +80,7 @@ const Contact = () => {
 
                                 {/* Submit Button */}
                                 <div className='sm:col-span-2'>
-                                    <button aria-label='send button' type='submit' className="text-xl w-full p-4 mt-2 text-white bg-gradient-to-r from-blue-500 to-pink-500 rounded-md cursor-pointer hover:from-blue-600 hover:to-pink-600">Send</button>
+                                    <button disabled={loading} aria-label='send button' type='submit' className={`text-xl w-full p-4 mt-2 text-white ${loading ? "bg-gray-800" : "bg-gradient-to-r from-blue-500 to-pink-500 rounded-md cursor-pointer hover:from-blue-600 hover:to-pink-600"}`}>Send</button>
                                 </div>
 
                             </div>
@@ -83,7 +88,6 @@ const Contact = () => {
                             {/* Success Message */}
                             {onSuccess && <div className='text-center mt-4 font-semibold text-green-500'>Message Sent Successfully!</div>}
                         </form>
-
 
                     </div>
                 </div>
