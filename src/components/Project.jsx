@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect, useRef } from "react";
 const Proj1 = lazy(() => import("../projects/Proj1"));
 const Proj2 = lazy(() => import("../projects/Proj2"));
 const Proj3 = lazy(() => import("../projects/Proj3"));
@@ -7,8 +7,27 @@ const Proj5 = lazy(() => import("../projects/Proj5"));
 const Proj6 = lazy(() => import("../projects/Proj6"));
 
 const Project = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting)
+    }, { threshold: 0.3 })
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+
+  }, [])
   return (
-    <div className='scroll-smooth max-w-[1200px] mx-auto p-5' id='project'>
+    <div ref={sectionRef} className={`scroll-smooth max-w-[1200px] mx-auto p-5 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} id='project' >
 
       {/* Project Title */}
       <div className='pb-8'>
@@ -21,15 +40,15 @@ const Project = () => {
 
         {/* Projects */}
         <Suspense fallback={<div className="text-white">Loading...</div>}>
-        <Proj1 />
-        <Proj2 />
-        <Proj3/>
-        <Proj4/>
-        <Proj5/>
-        <Proj6/>
-        {/* Add more projects here */}
+          <Proj1 />
+          <Proj2 />
+          <Proj3 />
+          <Proj4 />
+          <Proj5 />
+          <Proj6 />
+          {/* Add more projects here */}
         </Suspense>
-        
+
 
       </div>
     </div>

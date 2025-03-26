@@ -9,6 +9,7 @@ import mongodb from '../assets/mongodb.webp'
 import mysql from '../assets/mysql.webp'
 import jwt from '../assets/jwt.webp'
 import Tech from '../helpers/Tech'
+import { useEffect, useRef, useState } from 'react'
 
 // Front-end Technologies
 const frontendTech = [
@@ -30,11 +31,34 @@ const backendTech = [
 
 
 const Skills = () => {
+
+    const [isVisible, setIsVisible] = useState(false)
+    const sectionRef = useRef(null)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsVisible(entry.isIntersecting)
+        }, { threshold: 0.3 })
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current)
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+
+    }, [])
+
+
     return (
-        <>
-        
+        <div ref={sectionRef} className={`transition-all duration-1000 ease-out 
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+
             {/* Front-end Tech */}
-            <div className='border border-gray-800 sm:my-5 bg-black text-gray-400 px-8 py-4 md:h-auto max-w-[100%] md:max-w-[1200px] md:rounded-t-4xl mx-auto flex flex-wrap justify-center items-center gap-6'>
+            <div className={`border border-gray-800 sm:my-5 bg-black text-gray-400 px-8 py-4 md:h-auto max-w-[100%] md:max-w-[1200px] md:rounded-t-4xl mx-auto flex flex-wrap justify-center items-center gap-6`}>
 
                 {/* Tech Title */}
                 <div className='flex flex-col items-center w-full md:w-auto text-center'>
@@ -51,7 +75,7 @@ const Skills = () => {
             </div>
 
             {/* Back-end Tech*/}
-            <div className='border border-gray-800 sm:my-5 bg-black text-gray-400 px-8 py-4 md:h-auto max-w-[100%] md:max-w-[1200px] md:rounded-b-4xl mx-auto flex flex-wrap justify-center items-center gap-6'>
+            <div className={`border border-gray-800 sm:my-5 bg-black text-gray-400 px-8 py-4 max-w-[100%] md:max-w-[1200px] md:rounded-b-4xl mx-auto flex flex-wrap justify-center items-center gap-6`}>
 
                 {/* Tech Title */}
                 <div className='flex flex-col items-center w-full md:w-auto text-center'>
@@ -67,7 +91,7 @@ const Skills = () => {
 
             </div>
 
-        </>
+        </div>
     )
 }
 

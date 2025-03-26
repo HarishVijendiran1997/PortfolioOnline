@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const Contact = () => {
 
@@ -41,9 +41,31 @@ const Contact = () => {
             setLoading(false)
         }
     }
-    return (
-        <div className='max-w-[1200px] mx-auto sm:pt-20 sm:pb-18 p-5 scroll-smooth' id='contact'>
 
+    const [isVisible, setIsVisible] = useState(false)
+        const sectionRef = useRef(null)
+    
+        useEffect(() => {
+            const observer = new IntersectionObserver(([entry]) => {
+                setIsVisible(entry.isIntersecting)
+            }, { threshold: 0.3 })
+    
+            if (sectionRef.current) {
+                observer.observe(sectionRef.current)
+            }
+    
+            return () => {
+                if (sectionRef.current) {
+                    observer.unobserve(sectionRef.current);
+                }
+            };
+    
+        }, [])
+
+    return (
+        <div ref={sectionRef} className={`max-w-[1200px] mx-auto sm:pt-20 sm:pb-18 p-5 scroll-smooth transition-all duration-1000 ease-out 
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} id='contact'>
+            
             {/* Contact Title */}
             <div className='text-center'>
                 <h2 className='text-4xl font-bold leading-tight bg-gradient-to-r text-transparent bg-clip-text from-blue-500  to-pink-500 inline-block'>Contact Me</h2>
