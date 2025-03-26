@@ -11,25 +11,78 @@ const WeatherMessage = () => {
             try {
                 let response = await fetch("https://ipinfo.io/json?token=2fe29a33f152d4");
                 let data = await response.json();
-                console.log(data.country);
-                return data;
+                return data.region;
             } catch (error) {
-                console.error("Error fetching location:", error);
+                return null;
+            }
+        }
+
+        const getWeather = async (cityName) => {
+            const API_KEY = "2cc0505380c69952ae1ed2d7337bc39c"
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`;
+
+            try {
+                let response = await fetch(url)
+                let data = await response.json();
+                return data.main?.temp || null;
+            } catch (error) {
                 return null;
             }
         }
 
         const displayCity = async () => {
-            const location = await getLocation();
-            setMessage(location.city)
-            setIsVisible(true)
-        }
+            let cityName = await getLocation();
+            if (!cityName) return;
+
+            let temp = await getWeather(cityName);
+            if (temp === null) return;
+
+            const getMessage = (temp, cityName) => {
+                const hotMessages = [
+                    `🔥 It's scorching in ${cityName}! Cool down & say hi! 🍉`,
+                    `☀️ So hot in ${cityName}! Let's chill & chat! ❄️`,
+                    `🥵 Feels like an oven in ${cityName}! Let's talk!`,
+                    `🌞 Too warm? Let's grab a drink & connect!`
+                ];
+
+                const warmMessages = [
+                    `😎 Perfect weather in ${cityName}! Let's chat!`,
+                    `🌤️ Breezy in ${cityName}! Fancy a convo?`,
+                    `🌞 Nice day in ${cityName}! Let's talk!`,
+                    `🍃 The weather’s just right! Let's connect!`
+                ];
+
+                const coldMessages = [
+                    `❄️ Chilly in ${cityName}! Grab a coffee & let's chat! ☕`,
+                    `🥶 Cold vibes in ${cityName}! Let's warm up with a chat!`,
+                    `🌬️ Stay cozy in ${cityName}! Let's talk! 🔥`,
+                    `🧣 It's sweater weather! Let's connect! 📞`
+                ];
+
+                if (temp > 25) return hotMessages[Math.floor(Math.random() * hotMessages.length)];
+                if (temp > 15) return warmMessages[Math.floor(Math.random() * warmMessages.length)];
+                return coldMessages[Math.floor(Math.random() * coldMessages.length)];
+            };
+
+            // Inside displayCity function
+            const newMessage = getMessage(temp, cityName);
+
+            // Update message and show message for 1 second
+            setMessage(newMessage);
+            setTimeout(() => {
+                setIsVisible(true);
+            }, 1000);
+        };
+
         displayCity();
     }, [])
 
+
     return (
-        <div className={`text-4xl text-white bg-pink-500 text-center transition-all duration-1000 ease-out 
-      ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>{message}</div>
+        <div className='flex mt-2'>
+            <div className={` text-white border border-gray-900 rounded-2xl mx-auto inline-flex p-1  text-center transition-all duration-1000 ease-out 
+${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>{message}</div>
+        </div>
     )
 }
 

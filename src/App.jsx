@@ -3,7 +3,7 @@ import Hero from "./components/Hero"
 
 
 import { lazy, Suspense } from "react"
-// import WeatherMessage from "./components/WeatherMessage";
+import WeatherMessage from "./components/WeatherMessage";
 
 // Lazy loading components
 const Skills = lazy(() => import("./components/Skills"));
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* <WeatherMessage /> */}
+      <WeatherMessage />
       <Hero />
       <Suspense fallback={<div>Loading...</div>}>
         <Skills />
