@@ -31,11 +31,11 @@ const WeatherMessage = () => {
         }
 
         const displayCity = async () => {
-            let cityName = await getLocation();
-            if (!cityName) return;
 
-            let temp = await getWeather(cityName);
-            if (temp === null) return;
+
+            const [cityName, temp] = await Promise.all([getLocation(), getLocation().then(getWeather)]);
+
+            if (!cityName || temp === null) return;
 
             const getMessage = (temp, cityName) => {
                 const hotMessages = [
@@ -79,9 +79,13 @@ const WeatherMessage = () => {
 
 
     return (
-        <div className='flex mt-2'>
-            <div className={` text-white border border-gray-900 rounded-2xl mx-auto inline-flex p-1  text-center transition-all duration-1000 ease-out 
-${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>{message}</div>
+        <div className='flex'>
+            <div
+                className={`text-white border md:border-gray-900 border-gray-800 rounded-b-xl mx-auto h-[60px] px-4 inline-flex justify-center items-center text-center transition-all duration-1000 ease-out
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"}`}
+            >
+                {message}
+            </div>
         </div>
     )
 }
