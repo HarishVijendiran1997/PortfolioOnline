@@ -7,8 +7,12 @@ const Hero = () => {
     const [isVisible, setIsVisible] = useState(false)
     const [isBtnVisible, setIsBtnVisible] = useState(false)
     const [isBtn2Visible, setIsBtn2Visible] = useState(false)
+    const [isTypingVisible, setIsTypingVisible] = useState(false)
 
     useEffect(() => {
+        setTimeout(() => {
+            setIsTypingVisible(true)
+        }, 2400);
         setTimeout(() => {
             setIsBtn2Visible(true)
         }, 1600);
@@ -40,7 +44,7 @@ const Hero = () => {
                     <span className='bg-gradient-to-r text-transparent bg-clip-text from-blue-500  to-pink-500'>
                         I'm a
                     </span><br />
-                    <TypeAnimation
+                    {isTypingVisible ? (<TypeAnimation
                         sequence={[
                             "Front-end Developer",
                             1000,
@@ -52,7 +56,7 @@ const Hero = () => {
                         wrapper='span'
                         speed={50}
                         repeat={Infinity}
-                    />
+                    />) : (<span>Front-end Developer</span>)}
                 </h1>
 
                 {/*Hero Description */}

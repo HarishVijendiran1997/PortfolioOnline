@@ -81,7 +81,7 @@ const WeatherMessage = () => {
     return (
         <div className='flex mt-2'>
             <div
-                className={`text-white border md:border-gray-900 border-gray-800 md:rounded-b-xl rounded-4xl mx-auto h-[60px] px-4 inline-flex justify-center items-center text-center transition-all duration-1000 ease-out
+                className={`text-white border md:border-gray-900 border-gray-800 md:rounded-b-5xl rounded-4xl mx-auto h-[60px] px-4 inline-flex justify-center items-center text-center transition-all duration-1000 ease-out
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"}`}
             >
                 {message}

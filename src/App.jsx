@@ -19,10 +19,10 @@ function App() {
       <NavBar />
       <WeatherMessage />
       <Hero />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
+        <About />
         <Skills />
         <Project />
-        <About />
         <Contact />
         <Footer />
       </Suspense>
