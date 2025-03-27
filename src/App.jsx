@@ -4,6 +4,7 @@ import Hero from "./components/Hero"
 
 import { lazy, Suspense } from "react"
 import WeatherMessage from "./components/WeatherMessage";
+import ChatbotContainer from "./components/bot/ChatbotContainer";
 
 // Lazy loading components
 const Skills = lazy(() => import("./components/Skills"));
@@ -18,6 +19,7 @@ function App() {
     <>
       <NavBar />
       <WeatherMessage />
+    <ChatbotContainer/>
       <Hero />
       <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
         <About />
