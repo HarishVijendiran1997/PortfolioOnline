@@ -8,37 +8,37 @@ import { FaTimes } from "react-icons/fa";
 // import { FaArrowDown } from "react-icons/fa"
 export const myInfo = `
     Introduction:
-    My name is Harish. I am a full-stack developer with experience in React, TailwindCSS, Node.js, MongoDB, and Spring Boot. I have a strong interest in web development, app development, and problem-solving. I am currently leading a team of four developers to build a React application.
+    Hi, I’m Harish, a frontend-focused full-stack developer with experience in React, TailwindCSS, Node.js, and MongoDB. I’m passionate about building scalable web applications with great UI/UX. I also have backend knowledge in Spring Boot and PostgreSQL.
 
-    Details:
-    I enjoy creating web applications and exploring new technologies. Currently, I’m integrating a chatbot into my portfolio using the Gemini API. I also plan to build an NPM package for coding problems and use it in a Vite React project. I have a goal of traveling the world and eventually buying a giraffe.
+    Looking for:
+    I’m actively seeking frontend or full-stack developer roles where I can contribute my skills in React, JavaScript, and API integrations while growing as a developer.
 
-    Location:
-    Based in Cuddalore, Tamil Nadu, India. But moving to Portugal in a week
+    Current Work:
+    - Integrated a chatbot into my portfolio using the Gemini API.
+    - Developing an NPM package for coding problems to use in a Vite React project.
 
     Projects:
-    - WorkoutX App: A workout management app using Node.js, Express.js, MongoDB, authentication, and a fake payment system for learning purposes.
-    - Portfolio Website: Showcasing my skills and projects. (Check it out: https://portfolio-online-eight.vercel.app/)
-    - React To-Do App: Using Spring Boot and PostgreSQL.
-    - CRUD App: Built with Spring Boot and MySQL.
+    - **WorkoutX App** – A workout management app using Node.js, Express.js, MongoDB, authentication, and a fake payment system for learning purposes.
+    - **Portfolio Website** – Showcasing my skills and projects. (Check it out: [Portfolio Link](https://portfolio-online-eight.vercel.app/))
+    - **CRUD App** – Developed using Spring Boot and MySQL.
 
     Skills:
-    - Frontend: React, TailwindCSS, JavaScript
-    - Backend: Node.js, Express.js, Spring Boot
-    - Database: MongoDB, MySQL, PostgreSQL
-    - Other: Git, API integration, Chatbot development
+    - **Frontend:** React, TailwindCSS, JavaScript
+    - **Backend:** Node.js, Express.js, Spring Boot
+    - **Databases:** MongoDB, MySQL, PostgreSQL
+    - **Other:** Git, API integration, Chatbot development (Gemini API)
 
-    Future Plans:
-    - Improve my React and backend skills.
-    - Build more projects and contribute to open-source.
-    - Start a business and travel the world.
+    Future Goals:
+    - Master advanced frontend techniques and explore system design.
+    - Learn Golang for backend development.
+    - Build more projects, contribute to open-source, and eventually start a business.
 
     Stay Connected:
     - LinkedIn: https://www.linkedin.com/in/harish-v-4a674b223/
     - GitHub: https://github.com/HarishVijendiran1997
-    - Instagram: https://www.instagram.com/harishvijendiran/
     - Email: Harish.vijendiran@gmail.com
 `;
+
 
 const ChatbotContainer = () => {
 
@@ -73,7 +73,7 @@ const ChatbotContainer = () => {
         }
 
         try {
-            const response = await fetch("https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=AIzaSyDHUX3JZVb8kWOghpzc52b401LiH-c4xYk", requestOptions)
+            const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCC4g04CaawvIjkLs7fdFLfHunqJwE5Ygo", requestOptions)
             const data = await response.json()
             if (!response.ok) throw new Error(data.error.message || "Something went wrong")
             // Extract the bot response and format it for display
@@ -108,10 +108,10 @@ const ChatbotContainer = () => {
         <div className="container w-full flex overflow-hidden flex-col items-center">
 
             {/* Chat Toggle */}
-            <button onClick={() => setShowChatBot(prev => !prev)} id='chat-toggle' className={`transition-all duration-1000 text-white fixed md:bottom-8 md:right-9 bottom-4 right-5 z-50 h-12 w-12 flex items-center justify-center ${showChatBot ? "border rounded-xl border-gray-700" : "rounded-xl bg-gradient-to-br from-blue-500 to-pink-500 p-2"} ${isVisible ? "translate-x-0" : "translate-x-50"} ${isBouncing ? "animate-ping" : ""}`}>
-                {showChatBot ? (<span className='absolute rotate-90 transition-all duration-100'>
+            <button onClick={() => setShowChatBot(prev => !prev)} id='chat-toggle' className={`transition-all duration-1000 text-white fixed md:bottom-8 md:right-9 bottom-[15px] right-5 z-50 h-12 w-12 flex items-center justify-center ${showChatBot ? "border rounded-xl border-gray-700" : "rounded-full bg-gradient-to-br from-blue-500 to-pink-500 p-2"} ${isVisible ? "translate-x-0" : "translate-x-50"} ${isBouncing ? "animate-ping" : ""}`}>
+                {showChatBot ? (<span className='absolute rotate-180 transition-all duration-200'>
                     <FaTimes size={24} />
-                </span>) : (<span className='absolute  transition-all duration-100'>
+                </span>) : (<span className='absolute  transition-all duration-200'>
                     <FaComments size={24} />
                 </span>
                 )}
@@ -119,7 +119,7 @@ const ChatbotContainer = () => {
 
 
             {/* Chatbot Container */}
-            <div className={`container shadow-[4px_-4px_10px_rgb(236,72,153),-4px_4px_10px_rgb(96,165,250)]  bg-black/70 backdrop-blur-md w-[400px] transition-all duration-700 ease-in-out ${showChatBot ? "translate-x-0 translate-y-0 scale-100 opacity-100 pointer-events-auto" : "translate-x-50 translate-y-80 scale-0 opacity-0 pointer-events-none"} rounded-bl-2xl rounded-tr-2xl rounded-tl-2xl fixed z-10 md:bottom-1/7 bottom-1/10 md:right-1/40`}>
+            <div className={`container shadow-[4px_-4px_10px_rgb(236,72,153),-4px_4px_10px_rgb(96,165,250)]  bg-black/70 backdrop-blur-md w-[400px] transition-all duration-500 ease-in-out ${showChatBot ? "translate-x-0 translate-y-0 scale-100 opacity-100 pointer-events-auto" : "translate-x-50 translate-y-80 scale-0 opacity-0 pointer-events-none"} rounded-bl-2xl rounded-tr-2xl rounded-tl-2xl fixed z-10 md:bottom-1/7 bottom-1/10 md:right-1/40`}>
                 {/* Header */}
                 <div className="border border-b-gray-700 bg-black my-auto mx-auto flex items-center p-4 z-20 justify-between rounded-t-2xl">
 
@@ -127,7 +127,7 @@ const ChatbotContainer = () => {
                     {/* Bot Info */}
                     <div className="flex gap-2.5 items-center">
                         <span className="rounded-md text-white bg-gradient-to-br from-blue-500 to-pink-500 p-2 font-bold"><FaRobot size={16} /></span>
-                        <h2 className="text-white text-lg font-semibold">Chatbot</h2>
+                        <h2 className="text-white text-lg font-semibold">Harish AI Assistant</h2>
                     </div>
 
 
@@ -142,7 +142,7 @@ const ChatbotContainer = () => {
                     <div className="flex gap-2.5 items-end">
                         <p className="rounded-full text-white bg-gradient-to-br from-blue-500 to-pink-500 p-2 font-bold"><FaRobot size={16} /></p>
                         <p className="px-3 text-s break-words whitespace-pre-wrap py-2 max-w-[75%] bg-purple-700 text-white rounded-br-xl rounded-tl-xl rounded-tr-xl">
-                            Hi there! How can I help you today?
+                            Hi, Harish here. How can I help you?
                         </p>
                     </div>
                     {/* renders the chat history dynamically*/}

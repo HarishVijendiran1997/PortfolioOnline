@@ -11,7 +11,7 @@ const WeatherMessage = () => {
             try {
                 let response = await fetch("https://ipinfo.io/json?token=2fe29a33f152d4");
                 let data = await response.json();
-                return data.region;
+                return data.city;
             } catch (error) {
                 return null;
             }
