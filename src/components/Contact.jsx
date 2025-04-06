@@ -22,7 +22,7 @@ const Contact = () => {
             [name, email, message, new Date().toLocaleString()]
         ]
         try {
-            const response = await fetch("https://v1.nocodeapi.com/harishvijendiran/google_sheets/NHEqIhmqLvOSmmMP?tabId=Sheet1", {
+            const response = await fetch(import.meta.env.VITE_GOOGLE_FORM_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

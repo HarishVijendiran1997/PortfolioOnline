@@ -5,6 +5,7 @@ const Proj3 = lazy(() => import("../projects/Proj3"));
 const Proj4 = lazy(() => import("../projects/Proj4"));
 const Proj5 = lazy(() => import("../projects/Proj5"));
 const Proj6 = lazy(() => import("../projects/Proj6"));
+const Proj7 = lazy(() => import("../projects/Proj7"));
 
 const Project = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -40,6 +41,7 @@ const Project = () => {
 
         {/* Projects */}
         <Suspense fallback={<div className="text-white">Loading...</div>}>
+          <Proj7 />
           <Proj1 />
           <Proj2 />
           <Proj3 />

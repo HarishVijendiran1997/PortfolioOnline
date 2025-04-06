@@ -73,7 +73,7 @@ const ChatbotContainer = () => {
         }
 
         try {
-            const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCC4g04CaawvIjkLs7fdFLfHunqJwE5Ygo", requestOptions)
+            const response = await fetch(import.meta.env.VITE_GOOGLE_API_URL, requestOptions)
             const data = await response.json()
             if (!response.ok) throw new Error(data.error.message || "Something went wrong")
             // Extract the bot response and format it for display

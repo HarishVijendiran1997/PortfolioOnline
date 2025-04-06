@@ -9,7 +9,7 @@ const WeatherMessage = () => {
     useEffect(() => {
         const getLocation = async () => {
             try {
-                let response = await fetch("https://ipinfo.io/json?token=2fe29a33f152d4");
+                let response = await fetch(import.meta.env.VITE_GEO_LOCATION_URL);
                 let data = await response.json();
                 return data.city;
             } catch (error) {
@@ -18,8 +18,8 @@ const WeatherMessage = () => {
         }
 
         const getWeather = async (cityName) => {
-            const API_KEY = "2cc0505380c69952ae1ed2d7337bc39c"
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`;
+            // const API_KEY = "2cc0505380c69952ae1ed2d7337bc39c"
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${import.meta.env.VITE_WEATHER_URL}`;
 
             try {
                 let response = await fetch(url)
