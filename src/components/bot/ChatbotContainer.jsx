@@ -7,36 +7,37 @@ import { FaTimes } from "react-icons/fa";
 // import { myInfo } from '../../myInfo'
 // import { FaArrowDown } from "react-icons/fa"
 export const myInfo = `
-    Introduction:
-    Hi, I’m Harish, a frontend-focused full-stack developer with experience in React, TailwindCSS, Node.js, and MongoDB. I’m passionate about building scalable web applications with great UI/UX. I also have backend knowledge in Spring Boot and PostgreSQL.
+Hi, I’m Harish — a frontend-focused full-stack developer skilled in React, TailwindCSS, Node.js, and MongoDB. I also work with Spring Boot and PostgreSQL.
 
-    Looking for:
-    I’m actively seeking frontend or full-stack developer roles where I can contribute my skills in React, JavaScript, and API integrations while growing as a developer.
+🔍 Looking for: Frontend or full-stack roles (React, JavaScript, API work).
 
-    Current Work:
-    - Integrated a chatbot into my portfolio using the Gemini API.
-    - Developing an NPM package for coding problems to use in a Vite React project.
+🚧 Current Work:
+- Chatbot integration (Gemini API)
+- Coding problems NPM package
 
-    Projects:
-    - **WorkoutX App** – A workout management app using Node.js, Express.js, MongoDB, authentication, and a fake payment system for learning purposes.
-    - **Portfolio Website** – Showcasing my skills and projects. (Check it out: [Portfolio Link](https://portfolio-online-eight.vercel.app/))
-    - **CRUD App** – Developed using Spring Boot and MySQL.
+🛠️ Projects:
+- WorkoutX App (MERN stack Auth)
+- Job Management Admin Panel (MERN stack)
+- LookLinks - Website directory (React + Firestore)
+- Portfolio (https://portfolio-online-eight.vercel.app/)
+- CRUD App (Spring Boot + MySQL)
 
-    Skills:
-    - **Frontend:** React, TailwindCSS, JavaScript
-    - **Backend:** Node.js, Express.js, Spring Boot
-    - **Databases:** MongoDB, MySQL, PostgreSQL
-    - **Other:** Git, API integration, Chatbot development (Gemini API)
+⚙️ Skills:
+- Frontend: React, Tailwind, JS
+- Backend: Node.js, Spring Boot
+- DB: MongoDB, MySQL, PostgreSQL, Firestore
+- Others: Git, APIs, Gemini, Socket.io
 
-    Future Goals:
-    - Master advanced frontend techniques and explore system design.
-    - Learn Golang for backend development.
-    - Build more projects, contribute to open-source, and eventually start a business.
+🎯 Goals:
+- Master frontend + system design
+- Learn Golang
+-A. I Overlaying Video Annotation
+- Contribute + start a business
 
-    Stay Connected:
-    - LinkedIn: https://www.linkedin.com/in/harish-v-4a674b223/
-    - GitHub: https://github.com/HarishVijendiran1997
-    - Email: Harish.vijendiran@gmail.com
+📬 Contact:
+- LinkedIn: linkedin.com/in/harish-v-4a674b223/
+- GitHub: github.com/HarishVijendiran1997
+- Email: Harish.vijendiran@gmail.com
 `;
 
 

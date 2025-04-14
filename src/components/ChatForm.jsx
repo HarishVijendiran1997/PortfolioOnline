@@ -13,26 +13,31 @@ const ChatForm = ({ chatHistory, setChatHistory, generateBotResponse }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const userMessage = inputRef.current.value.trim();
-
+  
     if (!userMessage) return;
-
-    // Clear input and disable button
+  
     inputRef.current.value = "";
     setCanSend(false);
-
-    // Update chat history with the user message
-    setChatHistory((history) => {
-      const updatedHistory = [...history, { role: 'user', text: userMessage }];
-
-      // Simulate the model's response after 600ms
-      setTimeout(() => {
-        setChatHistory([...updatedHistory, { role: 'model', text: "Thinking..." }]);
-        generateBotResponse([...updatedHistory, { role: 'user', text: `Using the details provided above, please address this query: ${userMessage}` }]);
-      }, 600);
-
-      return updatedHistory;
-    });
+  
+    // Add user message to chat
+    const updatedHistory = [...chatHistory, { role: 'user', text: userMessage }];
+    setChatHistory(updatedHistory);
+  
+    // Simulate delay then call bot (add "Thinking..." inside generateBotResponse)
+    setTimeout(() => {
+      // Add "Thinking..." temporarily
+      setChatHistory(prev => [...prev, { role: 'model', text: "Thinking..." }]);
+  
+      generateBotResponse([
+        ...updatedHistory,
+        {
+          role: 'user',
+          text: `Use the user's profile information above to answer the following question as accurately as possible:\n${userMessage}`
+        }
+      ]);
+    }, 600);
   };
+  
 
   return (
     <div className='relative w-full'>
