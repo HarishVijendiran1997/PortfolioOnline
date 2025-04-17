@@ -7,6 +7,7 @@ const Proj5 = lazy(() => import("../projects/Proj5"));
 const Proj6 = lazy(() => import("../projects/Proj6"));
 const Proj7 = lazy(() => import("../projects/Proj7"));
 const Proj8 = lazy(() => import("../projects/Proj8"));
+const Proj9 = lazy(() => import("../projects/Proj9"));
 
 const Project = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -46,6 +47,7 @@ const Project = () => {
           <Proj7 />
           <Proj1 />
           <Proj2 />
+          <Proj9 />
           <Proj3 />
           <Proj4 />
           <Proj5 />
