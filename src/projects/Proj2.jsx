@@ -7,7 +7,7 @@ const Proj2 = () => {
 
   const [menu, setMenu] = useState(false)
 
-  const github = "https://github.com/HarishVijendiran1997/Portfolio"
+  const github = "https://github.com/HarishVijendiran1997/PortfolioOnline"
   const live = "https://portfolio-online-eight.vercel.app/"
 
   const handleClick = () => {
